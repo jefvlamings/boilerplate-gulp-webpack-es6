@@ -1,0 +1,31 @@
+{
+  "name": "Game",
+  "version": "0.0.1",
+  "description": "Game - by Jef Vlamings",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "coffeeify": "^1.1.0",
+    "browserify": "^10.2.0",
+    "gulp-coffeeify": "^0.1.8",
+    "gulp-haml-coffee": "^0.0.6",
+    "gulp-notify": "^2.2.0",
+    "gulp-sass": "^2.0.1",
+    "gulp-util": "^3.0.4",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "haml": "^0.4.3",
+    "jquery": "^2.1.4",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "vinyl-transform": "^1.0.0"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.9.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jef Vlamings",
+  "license": "ISC"
+}
