@@ -1,7 +1,7 @@
 {
-  "name": "Game",
+  "name": "Boilerplate",
   "version": "0.0.1",
-  "description": "Game - by Jef Vlamings",
+  "description": "A boilerplate for front-end applications using Gulp, Browserify, Coffeescript, SASS and HAML",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp": "^3.8.11",
