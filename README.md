@@ -1,2 +1,2 @@
 # boilerplate
-Boilerplate for Gulp + Coffeescript + Haml + Browserify
+Boilerplate for Gulp + Webpack + HAML + SASS
