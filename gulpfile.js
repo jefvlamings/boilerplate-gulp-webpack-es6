@@ -3,20 +3,18 @@
  */
 
 // Requirements
-var gulp        = require('gulp');
-var sourcemaps  = require('gulp-sourcemaps');
-var haml        = require('gulp-haml-coffee');
-var sass        = require('gulp-sass');
-var uglify      = require('gulp-uglify');
-var notify      = require("gulp-notify");
-var browserify  = require('browserify');
-var coffeeify   = require('coffeeify');
-var source      = require('vinyl-source-stream');
-var buffer      = require('vinyl-buffer');
+var gulp                = require('gulp');
+var gutil               = require("gulp-util");
+var haml                = require('gulp-haml-coffee');
+var sass                = require('gulp-sass');
+var uglify              = require('gulp-uglify');
+var notify              = require("gulp-notify");
+var webpack             = require("gulp-webpack");
+var webpackConfig       = require("./webpack.config.js");
 
 // Paths
 var paths = {
-    scripts: ['src/js/*.coffee'],
+    scripts: ['src/js/*.js'],
     sass: ['src/css/*.sass'],
     haml: ['src/*.haml']
 };
@@ -29,19 +27,9 @@ gulp.task('haml', function () {
 });
 
 // Javascript
-gulp.task('javascript', function() {
-    return browserify({
-        entries: ['src/js/app.coffee'],
-        extensions: ['.js','.coffee'],
-        debug: true
-    })
-        .transform(coffeeify)
-        .bundle()
-        .pipe(source('app.js'))
-        .pipe(buffer())
-        .pipe(sourcemaps.init({loadMaps: true}))
-        //.pipe(uglify())
-        .pipe(sourcemaps.write())
+gulp.task("javascript", function() {
+    return gulp.src('src/js/app.js')
+        .pipe(webpack(webpackConfig))
         .pipe(gulp.dest('build/js'))
         .pipe(notify("Bundling done."));
 });
